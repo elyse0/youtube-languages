@@ -1,0 +1,21 @@
+name: Deploy vue page
+on: push
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+      - uses: actions/checkout@v2
+      - id: Build-Vue
+        uses: ./.github/actions/vue-to-github-pages
+        with:
+          username: 'elyse0'
+          reponame: 'youtube-languages'
+          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          VUE_APP_AUTH0_DOMAIN: ${{ secrets.VUE_APP_AUTH0_DOMAIN }}
+          VUE_APP_AUTH0_CLIENT_ID: ${{ secrets.VUE_APP_AUTH0_CLIENT_ID }}
+          VUE_APP_AUTH0_REDIRECT_URI: ${{ secrets.VUE_APP_AUTH0_REDIRECT_URI }}
+          VUE_APP_AUTH0_AUDIENCE: ${{ secrets.VUE_APP_AUTH0_AUDIENCE }}
+          VUE_APP_FUNCTION_RETRIEVE_VIDEOS_URL: ${{ secrets.VUE_APP_FUNCTION_RETRIEVE_VIDEOS_URL }}
+          VUE_APP_FUNCTION_BAN_CHANNEL_URL: ${{ secrets.VUE_APP_FUNCTION_BAN_CHANNEL_URL }}
