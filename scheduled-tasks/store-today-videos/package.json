@@ -1,0 +1,25 @@
+{
+  "name": "store-today-videos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "dev": "ts-node -r tsconfig-paths/register -r dotenv/config src/index.ts"
+  },
+  "dependencies": {
+    "@google-cloud/scheduler": "^2.3.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "ts-node": "^10.4.0",
+    "tsc-alias": "^1.6.5",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.2"
+  }
+}
